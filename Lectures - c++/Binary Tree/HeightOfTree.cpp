@@ -17,8 +17,9 @@ class Node{
 };
 
 //build tree;
-Node* buildTree(vector<int>& arr, int i){
+Node* buildTree(vector<int>& arr, int& i){
     if(i >= arr.size() || arr[i] == -1){
+        i++;
         return NULL;
     }
     Node* root = new Node(arr[i]);
@@ -44,5 +45,6 @@ int index = 0;
 Node* root = buildTree(dataoftree, index);
 
 cout<<"Height of Tree: "<<height(root)<<endl;
+return 0;
 
 }
