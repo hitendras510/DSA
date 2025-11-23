@@ -30,7 +30,7 @@ Node* buildTree(vector<int>& arr, int& i){
     return root;
 }
 
-//logic for tree
+//logic for Height of tree
 int height(Node* root){
     if(root == NULL) return 0;
     int leftht=height(root->left);
