@@ -7,34 +7,35 @@ class Node{
     int data;
     Node* left;
     Node* right;
+
     Node(int val){
         data = val;
         left = right = NULL;
     }
 };
 
-//build tree
+// Build tree using PREORDER with -1 as NULL
 Node* buildTree(vector<int>& arr, int& i){
-    if( i >= arr.size() || arr[i] == -1){
+    if(i >= arr.size() || arr[i] == -1){
+        i++;
+        return NULL;
+    }
+
+    Node* root = new Node(arr[i]);
     i++;
-    return NULL;
-}
-Node* root = new Node(arr[i]);
-root->left = buildTree(arr,i);
-root->right = buildTree(arr,i);
-return root;
+
+    root->left = buildTree(arr, i);
+    root->right = buildTree(arr, i);
+
+    return root;
 }
 
-//Main Logic
 int countNode(Node* root){
-    if( root == NULL){
-
+    if(root == NULL){
         return 0;
     }
-    int leftcount = countNode(root->left);
-    int rightcount = countNode(root->right);
-   
-    return leftcount + rightcount + 1;
+
+    return countNode(root->left) + countNode(root->right) + 1;
 }
 
 int main(){
@@ -43,7 +44,7 @@ int main(){
     int index = 0;
 
     Node* root = buildTree(data, index);
-    cout<<"Count of Nodes:"<<countNode(root)<<endl;
+    cout << "Count of Nodes: " << countNode(root) << endl;
+
     return 0;
-    
 }
