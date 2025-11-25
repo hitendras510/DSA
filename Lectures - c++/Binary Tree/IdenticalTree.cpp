@@ -13,7 +13,7 @@ public:
     }
 };
 
-// build a tree
+// build a tree.
 Node* buildTree(vector<int>& arr, int& i){
     if(i >= arr.size() || arr[i] == -1){
         i++;
