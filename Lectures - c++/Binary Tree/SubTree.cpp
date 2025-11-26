@@ -50,8 +50,11 @@ bool isSubTree(Node* root, Node* subRoot){
 
 int main(){
     vector<int> dataoftree = {1, 2, -1, -1, 3, 4, -1, -1, 5, -1, -1};
+
     int index = 0;
     Node* root = buildTree(dataoftree, index);
+
+    index = 0; // 🔥 reset index
     Node* subRoot = buildTree(dataoftree, index);
 
     if(isSubTree(root, subRoot))
