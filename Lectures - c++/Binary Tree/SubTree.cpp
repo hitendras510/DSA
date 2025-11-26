@@ -2,5 +2,5 @@
 
 #include<iostream>
 #include<vector>
-usig namespace std;
+using namespace std;
 
