@@ -1,4 +1,4 @@
-//is SubTree Tree of Another Tree.
+//is Subtree of another tree.
 
 #include<iostream>
 #include<vector>
