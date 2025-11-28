@@ -14,13 +14,6 @@ struct Bst{
     }
 };
 
-/*************  ✨ Windsurf Command ⭐  *************/
-/**
- * Creates a new root node with the given data and sets its left and right pointers to NULL.
- * @param x The data to be stored in the new root node.
- * @param root A reference to the root node to be created.
- */
-/*******  843c2fca-fc7f-497d-8b87-8b6c494e15fd  *******/
 void createRoot(int x, Bst* &root){
     root = new Bst;
     root->data = x;
