@@ -9,6 +9,7 @@ public:
 
         while (curr != nullptr) {
             if (curr->left == nullptr) {
+                
                 // Check violation
                 if (prev != nullptr && prev->val > curr->val) {
                     if (first == nullptr) {
