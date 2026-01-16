@@ -33,6 +33,23 @@ public:
         }
     }
 };
+//dfs traversal
+void dfsHelper(int u, vector<bool> &visit){
+    cout<< u << " ";
+    visit[u] = true;
+
+    for(int v: l[u]){
+        if(!visit[v]){
+            dfsHelper(v,visit);
+        }
+    }
+}
+void dfs() {
+    int src =0;
+    vector<bool> vis(V , false);
+
+    dfsHelper(src,vis);
+}
 
 int main()
 {
@@ -42,9 +59,8 @@ int main()
     g.addEdge(1, 2);
     g.addEdge(1, 3);
     g.addEdge(2, 1);
-    g.addEdge(2, 3);
     g.addEdge(2, 4);
 
-    g.printList();
+    g.dfs();
     return 0;
 }
