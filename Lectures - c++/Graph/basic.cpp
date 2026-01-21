@@ -1,14 +1,15 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include<queue>
 using namespace std;
 
 class Graph
 {
     int V;
     list<int> *l;
+    public:
 
-public:
     Graph(int V)
     {
         this->V = V;
@@ -33,6 +34,29 @@ public:
         }
     }
 };
+//bfs traversal 
+void bfs(){
+    queue<int> q;
+    vector<bool> vis(V, false);
+
+    q.push(0);
+    vis[0] = true;
+
+    while(q.size()>0){
+        int u = q.front();
+        q.pop();
+
+        cout<<u<<" ";
+
+        for(int v: l[u]){
+            if(!vis[v]){
+                q.push(v);
+                vis[v] = true;
+            }
+        }
+    }
+}
+
 //dfs traversal
 void dfsHelper(int u, vector<bool> &visit){
     cout<< u << " ";
