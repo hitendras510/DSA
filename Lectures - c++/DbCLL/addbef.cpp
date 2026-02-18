@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-struct DCLL //hello
+struct DCLL 
 {
     int data;
     DCLL *next, *prev;
